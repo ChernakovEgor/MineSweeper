@@ -13,6 +13,7 @@
 		749226ED261C583E0090ADE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 749226EC261C583E0090ADE5 /* Assets.xcassets */; };
 		749226F0261C583E0090ADE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 749226EE261C583E0090ADE5 /* LaunchScreen.storyboard */; };
 		749226FF261C6E690090ADE5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749226FE261C6E690090ADE5 /* GameViewController.swift */; };
+		74922702261CA5330090ADE5 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74922701261CA5330090ADE5 /* GameLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		749226EF261C583E0090ADE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		749226F1261C583E0090ADE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		749226FE261C6E690090ADE5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		74922701261CA5330090ADE5 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				749226E5261C583B0090ADE5 /* SceneDelegate.swift */,
 				749226E7261C583B0090ADE5 /* ViewController.swift */,
 				749226FE261C6E690090ADE5 /* GameViewController.swift */,
+				74922701261CA5330090ADE5 /* GameLogic.swift */,
 				749226EC261C583E0090ADE5 /* Assets.xcassets */,
 				749226EE261C583E0090ADE5 /* LaunchScreen.storyboard */,
 				749226F1261C583E0090ADE5 /* Info.plist */,
@@ -139,6 +142,7 @@
 				749226FF261C6E690090ADE5 /* GameViewController.swift in Sources */,
 				749226E8261C583B0090ADE5 /* ViewController.swift in Sources */,
 				749226E4261C583B0090ADE5 /* AppDelegate.swift in Sources */,
+				74922702261CA5330090ADE5 /* GameLogic.swift in Sources */,
 				749226E6261C583B0090ADE5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

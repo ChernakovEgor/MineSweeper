@@ -62,13 +62,14 @@ extension ViewController {
     }
     
     func configureStartButton() {
-        startButton = UIButton()
+        startButton = UIButton(type: .system)
         
         startButton.setTitle("Begin", for: .normal)
         startButton.setTitleColor(.black, for: .normal)
         startButton.setTitleColor(.white, for: .highlighted)
         
         startButton.addTarget(self, action: #selector(beginGame), for: .touchUpInside)
+        
         
         startButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(startButton)
