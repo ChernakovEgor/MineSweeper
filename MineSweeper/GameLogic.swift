@@ -18,12 +18,17 @@ class GameLogic {
     private static let bombOptions = [10, 40, 90]
     private static let sizeOptions = [(10, 10), (16, 16), (16, 30)]
     
+    var difficulty: Int!
+    var numberOfBombs: Int!
+    
     var tiles = [Tile]()
     var bombsIndexes = [Int]()
     let rows: Int
     let columns: Int
     
     init(difficulty: Int) {
+        self.difficulty = difficulty
+        numberOfBombs = GameLogic.bombOptions[difficulty]
         rows = GameLogic.sizeOptions[difficulty].0
         columns = GameLogic.sizeOptions[difficulty].1
         
@@ -33,17 +38,18 @@ class GameLogic {
             }
         }
         
-        generateBombs(size: difficulty)
+        generateBombs()
         populateTiles()
     }
     
-    func populateTiles() {
+    private func populateTiles() {
         for bombIndex in bombsIndexes {
             tiles[bombIndex].value = "B"
             for c in -1...1 {
                 for p in -1...1 {
                     let checkIndex = bombIndex + c * columns + p
-                    if checkIndex >= 0 && checkIndex < tiles.count {
+                    
+                    if isValid(row: checkIndex / rows, column: checkIndex % columns) {
                         if let value = Int(tiles[checkIndex].value) {
                             tiles[checkIndex].value = "\(value + 1)"
                         }
@@ -53,11 +59,16 @@ class GameLogic {
         }
     }
     
-    func generateBombs(size: Int) {
-        let numbers = Array(0..<rows*columns)
+    private func generateBombs() {
+        var numbers = Array(0..<rows*columns)
                 
-        for _ in 0..<GameLogic.bombOptions[size] {
-            bombsIndexes.append(numbers[Int.random(in: 0..<numbers.count)])
-        }
+        numbers.shuffle()
+        let first = numbers.dropFirst(numbers.count - numberOfBombs)
+
+        bombsIndexes = Array(first)
+    }
+    
+    private func isValid(row: Int, column: Int) -> Bool {
+        return (row >= 0 && row < rows) && (column >= 0 && column < columns)
     }
 }
